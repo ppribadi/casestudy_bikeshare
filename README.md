@@ -119,7 +119,8 @@ Now we will try to break up the monthly stats two kinds of partitions:
 ##### Observations:
  - As expected, member riders counts are most heavy during 6-7am and 4-6pm due to work commute. Somewhat heavy during lunch hour.
  - As to casual riders, they also show high count of trips during 4-7pm. This should be a key behavior to further investigate. It is likely they will need to compete the use of the bikes with the commuters. The thought is if membership offers some special benefit during this peak time, they may want to convert.
-    
+
+The followings are breakdowns of the heatmaps into detailed subplots. They are good for further focused examinations.
 ![Weekday_Ride_Count_byHr_by_RiderType](Figures/Weekday_Ride_Count_byHr_by_RiderType.png)
 ![Weekend_Ride_Count_byHr_by_RiderType](Figures/Weekend_Ride_Count_byHr_by_RiderType.png)
 ![Weekday_Ride_Duration_byHr_by_RiderType](Figures/Weekday_Ride_Duration_byHr_by_RiderType.png)
