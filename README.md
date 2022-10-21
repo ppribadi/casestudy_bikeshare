@@ -10,12 +10,12 @@ The business task is defined as: In order to support the business stakeholder fo
 
 #### Business Tasks:
 I will break down the task into answering these questions:
-For casual and member riders:
+Compare between Casual and annual members:
 
-    - How different are usages by locations?  
-    - How many rides per month? How are different are they trending in time? 
-    - How long are the trips? How different are the stats? 
-    - How different are the rides by seasons, by hour of day and by day of week.
+    - How many rides per month? How are they trending in time?
+    - How different are the ride durations? By season, by hour of day and by day of week
+    - How different are usages by locations?
+    - What locations with large casual riders? (potential high conversion user group)
     
 ### Stage 2 - PREPARE
 The dataset consists of individual csv files for each month. The zipped files are downloaded via wget and saved locally. 
