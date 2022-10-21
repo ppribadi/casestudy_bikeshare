@@ -2,7 +2,7 @@
 This is a case study for completing the requirement of Google Data Analytics professional certification. The certification courses work through the roadmap of six stages of the data analytics, namely, ASK, PREPARE, PROCESS, ANALYZE, SHARE and ACT. This is the link to the [courses](https://www.coursera.org/professional-certificates/google-data-analytics). 
 
 ## Data and Scope
-The dataset for this case study is provided by Divvy Bike Sharing Company from Chicago. Cyclistic is a fictional company with the data analytic task based on real-life data from Divvy. The dataset is open source and provided with the project. The tabluar data contain trip data with start and end bike stations, start and end trip time stamps, bike types, and user types. Detailed scope of this project is described in 0_Scope.ipynb and 1_Ask.ipynb.
+The dataset for this case study is provided by Divvy Bike Sharing Company from Chicago. Cyclistic is a fictional company with the data analytic task based on real-life data from Divvy. The dataset is open source and provided with the project. The tabular data contain trip data with start and end bike stations, start and end trip time stamps, bike types, and user types. Detailed scope of this project is described in 0_Scope.ipynb and 1_Ask.ipynb.
 The following sections provide summary from each stage in the roadmap. The detailed works are processed and documented in the jupyter notebooks. I set out to capture the work process and not to seek the ultimate answers which means I limited the data scope to the data provided by the project. In case I have more time later, I would like to acquire more public data such as demographics and locational features.
 
 ### Stage 1 - ASK
@@ -65,7 +65,7 @@ This is the link to it
 - During the cold months, the casual rides are reduced more significant than rides by members. This means commuters still braved the cold for commutes.
 
 #### Conclusions
-- Though it is beyond scope to analyze locational demographics and ride profiles of users. It can be a signicant factor in deciding which user group to covert to membership.
+- Though it is beyond scope to analyze locational demographics and ride profiles of users. It can be a significant factor in deciding which user group to covert to membership.
 - We also want to rationalize whether we want to convert riders from locations with highest casual/member ratio (more rider candidates to promote membership), or locations with lowest casual/member ratio (this could mean, the demographics are most benefited by ride share membership). There should be difference strategies to approach the two groups for member conversion.
 
 
@@ -73,12 +73,12 @@ This is the link to it
 ![Ride Count by Rider type and Bike type](Figures/Ride_Count_by_BikeType_RiderType.png)
 ##### Observations:
 
-- Rideable type docked_bike was intitially the only type but is getting phased out. The casual members are slower to phase out docked_bike type. 
+- Rideable type docked_bike was initially the only type but is getting phased out. The casual members are slower to phase out docked_bike type. 
 - Classic_bike becomes most popular but electric_bike is gaining popularity. 
-- It is surprising that annual member which I perceive as communters choose to use classic bike over electric in comparison to casual members. Need to explore further on the motivation of choosing bike types such as bike for health, or leisure, or cost/ availability factors. (It is beyond scope for this analysis, but in reality, it is a import question.)
+- It is surprising that annual member which I perceive as commuters choose to use classic bike over electric in comparison to casual members. Need to explore further on the motivation of choosing bike types such as bike for health, or leisure, or cost/ availability factors. (It is beyond scope for this analysis, but in reality, it is a import question.)
 - The number of rides corresponds to seasons. The rides peaked in July and August months and lowest during December through February. The ride number patterns are very similar between casual riders and members.
 ##### Conclusion:
-    The ride counts between memembr and casual rider are actually quite similar. This is good news, since that also means there are many casual riders that are already familiar with using bike sharing services. We just need to find out further what will motivate them to commit to membership.
+    The ride counts between member and casual rider are actually quite similar. This is good news, since that also means there are many casual riders that are already familiar with using bike sharing services. We just need to find out further what will motivate them to commit to membership.
     
 ### Ride Duration Stats by Rider type and Bike type
 ![Ride Duration Stats (min max) by Rider type and Bike type](Figures/Ride_Duration_by_BikeType_RiderType_minmax.png)
@@ -127,5 +127,5 @@ The followings are breakdowns of the heatmaps into detailed subplots. They are g
 ![Weekend_Ride_Duration_byHr_by_RiderType](Figures/Weekend_Ride_Duration_byHr_by_RiderType.png)
 ##### Conclusion:
 - Since our focus is on converting casual to member riders, we need to examine further if some casual riders actually can benefit from membership from the aspect of saving money or conveniences. We need to further examine the demographics of the users in order to profile them better. 
-- From the polularity of ridership for casual riders during the peak hours of the days, we conclude that using bike as transportation is very relevant to the riders' needs. However, I think the best approach is to collect some surveys from casual users who use the bikes frequently to find out their pain points.
+- From the popularity of ridership for casual riders during the peak hours of the days, we conclude that using bike as transportation is very relevant to the riders' needs. However, I think the best approach is to collect some surveys from casual users who use the bikes frequently to find out their pain points.
     
