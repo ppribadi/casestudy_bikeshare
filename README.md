@@ -44,9 +44,9 @@ Each csv file is cleaned though a set of rules and saved to a cleaned_csv data f
 
     - drop rows with null data
     - drop rows with trip start time greater than trip stop time
-    - drop rows with station ids with lat/lng association abnomaly
+    - drop rows with station ids with lat/lng association anomaly
     - drop rows with station names with "Temp" indicating test trips
-    - drop rows with durations abnomaly (one trip was almost one month)
+    - drop rows with durations anomaly (one trip was almost one month)
 
 #### Merge
 The cleaned csv files are merged into one big csv file for future manipulations.
