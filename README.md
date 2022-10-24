@@ -2,28 +2,27 @@
 This is a case study for completing the requirement of Google Data Analytics professional certification. The certification courses work through the roadmap of six stages of the data analytics, namely, ASK, PREPARE, PROCESS, ANALYZE, SHARE and ACT. This is the link to the [courses](https://www.coursera.org/professional-certificates/google-data-analytics). 
 
 ## Data and Scope
-The dataset for this case study is provided by Divvy Bike Sharing Company from Chicago. Cyclistic is a fictional company with the data analytic task based on real-life data from Divvy. The dataset is open source and provided with the project. The tabular data contain trip data with start and end bike stations, start and end trip time stamps, bike types, and user types. Detailed scope of this project is described in 0_Scope.ipynb and 1_Ask.ipynb.
-The following sections provide summary from each stage in the roadmap. The detailed works are processed and documented in the jupyter notebooks. I set out to capture the work process and not to seek the ultimate answers which means I limited the data scope to the data provided by the project. In case I have more time later, I would like to acquire more public data such as demographics and locational features.
+The dataset for this case study is provided by Divvy Bike Sharing Company from Chicago. Cyclistic is a fictional company with this data analytic task based on real-life data from Divvy. The dataset is open source and provided with the project. The tabular data contain trip data with start and end bike stations, start and end trip time stamps, bike types, and user types. Detailed scope of this project is described in 0_Scope.ipynb and 1_Ask.ipynb.
+The following sections provide summary from each stage in the roadmap. The detailed works are processed and documented in the jupyter notebooks. I set out to capture the work process and not to seek the ultimate answers which means I limited the data scope to the data provided by the project. Further investigation can be made by acquiring more public data such as demographics and locational features.
 
 ### Stage 1 - ASK
 The business task is defined as: In order to support the business stakeholder for increasing rider conversion from casual riders to annual members, the data analyst needs to help discover how they use Cyclistic bikes differently.
 
 #### Business Tasks:
 I will break down the task into answering these questions:
-Compare between Casual and annual members:
+Compare between Casual and annual members between April 2020 and Sepember 2022:
 
-    - How many rides per month? How are they trending in time?
+    - How many rides per month? By season, by hour of day and by day of week
     - How different are the ride durations? By season, by hour of day and by day of week
     - How different are usages by locations?
-    - What locations with large casual riders? (potential high conversion user group)
     
 ### Stage 2 - PREPARE
-The dataset consists of individual csv files for each month. The zipped files are downloaded via wget and saved locally. 
+The dataset consists of individual csv files for each month. The zipped csv files are downloaded via wget and saved locally. 
 
 ### Stage 3 - PROCESS
 
 #### Data Schema
-The data columns are consistent throughout the csv files. The left column is the header and right column is the data type. The datatype are declared for python pandas datatype.
+The data columns are consistent throughout the csv files. The left column is the header and right column is the data type. The datatype are declared with python pandas datatype.
 
     ride_id                       object
     rideable_type               category
@@ -44,9 +43,9 @@ Each csv file is cleaned though a set of rules and saved to a cleaned_csv data f
 
     - drop rows with null data
     - drop rows with trip start time greater than trip stop time
-    - drop rows with station ids with lat/lng association anomaly
-    - drop rows with station names with "Temp" indicating test trips
-    - drop rows with durations anomaly (one trip was almost one month)
+    - drop rows with station ids with lat/lng anomaly
+    - drop rows with "Temp" in station name indicating test trips
+    - drop rows with durations anomaly (one odd trip was almost one month)
 
 #### Merge
 The cleaned csv files are merged into one big csv file for future manipulations.
@@ -55,14 +54,14 @@ Keep in mind, it is also possible to do data manipulations for individual csv an
 ## Stage 4 - ANALYZE
 ### Trip Counts by Station Locations
 In order to best visualize the bike trips and their locations. I summarized the trip counts by station and by month and published the data in Tableau.
-The dashboard contains two panes so it will be easier to do comparison side by side by filtering different month or rider types.
+The dashboard contains two panes so it will be easier to do side by side comaparison by filtering different month or rider types.
 This is the link to it 
 [Cyclistic Bike Trip Count Map](https://public.tableau.com/views/CyclisticTripCountsInterativeMap/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 ![Cyclistic Bike Trip Count Map_snapshot](Figures/Tableau_map.png)
 #### Observations
 - It is very clear that bike traffic is densest near Chicago harbor. One great example is at Streeter and Grand Ave. 
 - Some areas with great member/casual ratio like Greek Town, U of Illionis at Chicago and South Commons can be good member conversion zone. It can be helpful to identify demographic information by regions to further analyze the local characteristics.
-- During the cold months, the casual rides are reduced more significant than rides by members. This means commuters still braved the cold for commutes.
+- During the cold months, the casual rides are reduced more significantly than rides by members. This means commuters still braved the cold for commutes.
 
 #### Conclusions
 - Though it is beyond scope to analyze locational demographics and ride profiles of users. It can be a significant factor in deciding which user group to covert to membership.
@@ -73,7 +72,7 @@ This is the link to it
 ![Ride Count by Rider type and Bike type](Figures/Ride_Count_by_BikeType_RiderType.png)
 ##### Observations:
 
-- Rideable type docked_bike was initially the only type but is getting phased out. The casual members are slower to phase out docked_bike type. 
+- Rideable type docked_bike was initially the only type but is getting phased out.
 - Classic_bike becomes most popular but electric_bike is gaining popularity. 
 - It is surprising that annual member which I perceive as commuters choose to use classic bike over electric in comparison to casual members. Need to explore further on the motivation of choosing bike types such as bike for health, or leisure, or cost/ availability factors. (It is beyond scope for this analysis, but in reality, it is a import question.)
 - The number of rides corresponds to seasons. The rides peaked in July and August months and lowest during December through February. The ride number patterns are very similar between casual riders and members.
@@ -86,7 +85,7 @@ This is the link to it
 ##### Observations:
 
 - Compare left and right figures for 0-100% (min and max), they look very similar. Meaning the maximum length of trips are not good differentiators for the rider types. 
-- When looking at 25-75% of the duration stats, we see know that majority of the trips taken by members are shorter and varying less than the casual. This is likely the members use the bike for commuting so the distances are more constant. Whereas for casual riders, the ride purpose vary a lot more hence different length.
+- When looking at 25-75% of the duration stats, we see that majority of the trips taken by members are shorter and varying less than the casual. It is likely the members use the bike for commuting so the distances are more constant. Whereas for casual riders, the ride purpose vary a lot more hence different length.
   
 ##### Conclusion:
 - The ride duration stats shows that casual riders have more diverse trip length which differ from member riders who probably use bikes for more similar trips such as commuting and shorter trips.
